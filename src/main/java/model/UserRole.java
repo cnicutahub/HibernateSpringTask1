@@ -10,6 +10,14 @@ public class UserRole {
     private User userByUserId;
     private Role roleByRoleId;
 
+    public UserRole() {
+    }
+
+    public UserRole(User userByUserId, Role roleByRoleId) {
+        this.userByUserId = userByUserId;
+        this.roleByRoleId = roleByRoleId;
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -51,5 +59,14 @@ public class UserRole {
 
     public void setRoleByRoleId(Role roleByRoleId) {
         this.roleByRoleId = roleByRoleId;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRole{" +
+                "id=" + id +
+                ", userByUserId=" + userByUserId +
+                ", roleByRoleId=" + roleByRoleId +
+                '}';
     }
 }

@@ -1,22 +1,24 @@
 import model.Role;
 import model.User;
+import model.UserRole;
 import service.RoleService;
+import service.UserRoleService;
 import service.UserService;
 
 public class App {
     public static void main(String[] args) {
-//        UserService userService = new UserService();
-//        User user1 = new User("username1","fname","lname","wasd");
-//        userService.persist(user1);
-//        userService.findAll().forEach(System.out::println);
-
+        UserService userService = new UserService();
         RoleService roleService = new RoleService();
+        UserRoleService userRoleService = new UserRoleService();
 
-        Role role1 = new Role("admin");
+        User user = userService.findById(1);
+        Role role = roleService.findById(1);
 
-        roleService.persist(role1);
+        UserRole userRole = new UserRole(user,role);
 
-        roleService.findAll().forEach(System.out::println);
+        userRoleService.persist(userRole);
+
+        userRoleService.findAll().forEach(System.out::println);
 
     }
 }
