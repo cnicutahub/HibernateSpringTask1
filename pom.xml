@@ -7,14 +7,21 @@
     <groupId>com.endava</groupId>
     <artifactId>HibernateSpringTask1</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <mysql-connector-java.versoin>5.1.6</mysql-connector-java.versoin>
+        <hibernate-core.version>5.3.6.Final</hibernate-core.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -25,14 +32,13 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>${mysql-connector-java.versoin}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.3.6.Final</version>
+            <version>${hibernate-core.version}</version>
         </dependency>
-
     </dependencies>
 </project>
